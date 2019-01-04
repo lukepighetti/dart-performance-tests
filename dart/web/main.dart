@@ -1,7 +1,5 @@
 import 'dart:html';
 
-import 'iterate.dart';
-
 void main() {
   final e = querySelector('#output');
 
@@ -56,4 +54,28 @@ void main() {
   iterate("setText - red/green", (int i) {
     e..text = i % 2 == 0 ? "red" : "green";
   });
+}
+
+///
+///
+///
+///
+
+iterate(String title, Function(int) f) {
+  const iterations = 400000;
+
+  final s = Stopwatch();
+
+  s.start();
+
+  /// do an iteration
+  for (int i = 0; i < iterations; i++) {
+    f(i);
+  }
+
+  s.stop();
+
+  final time = (s.elapsedMicroseconds / 1000);
+
+  print("$title completed in ${time}ms");
 }
