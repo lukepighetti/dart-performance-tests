@@ -36,6 +36,23 @@ void main() {
     var element = querySelector("#output");
     element.text = i.toString();
   });
+
+  /// Create a nested tree
+  once("create nested tree", () {
+    var a = document.createElement("div");
+    a.id = "#target";
+
+    var b = document.createElement("div");
+
+    for (var i = 0; i < 500; i++) {
+      b.children.add(a);
+      b.id = i.toString();
+      a = b;
+      b = document.createElement("div");
+    }
+
+    e.children.add(a);
+  });
 }
 
 ///
@@ -58,9 +75,7 @@ iterate(String title, Function(int) f) {
 
   final time = (s.elapsedMicroseconds / 1000);
 
-  print(
-    "[dart] $title completed in ${time.toStringAsPrecision(3)}ms",
-  );
+  print("[dart] $title completed in ${time.toStringAsPrecision(3)}ms");
 }
 
 once(String title, Function() f) {
@@ -73,7 +88,5 @@ once(String title, Function() f) {
 
   final time = (s.elapsedMicroseconds / 1000);
 
-  print(
-    "[dart] $title completed in ${time.toStringAsPrecision(3)}ms",
-  );
+  print("[dart] $title completed in ${time.toStringAsPrecision(3)}ms");
 }

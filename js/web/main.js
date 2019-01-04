@@ -20,7 +20,7 @@ function main() {
   });
 
   /// Delete children
-  once("delete children", i => {
+  once("delete children", () => {
     while (e.firstChild) {
       e.firstChild.remove();
     }
@@ -35,6 +35,23 @@ function main() {
   iterate("query dom, set text content", i => {
     var element = document.querySelector("#output");
     element.textContent = i.toString();
+  });
+
+  /// Create a nested tree
+  once("create nested tree", i => {
+    var a = document.createElement("div");
+    a.id = "#target";
+
+    var b = document.createElement("div");
+
+    for (var i = 0; i < 500; i++) {
+      b.appendChild(a);
+      b.id = i;
+      a = b;
+      b = document.createElement("div");
+    }
+
+    e.appendChild(a);
   });
 }
 
@@ -58,9 +75,7 @@ function iterate(title, f) {
 
   var time = finish - start;
 
-  console.log(
-    `[js] ${title} completed in an average of ${time.toPrecision(3)}ms`
-  );
+  console.log(`[js] ${title} completed in ${time.toPrecision(3)}ms`);
 }
 
 function once(title, f) {
@@ -73,7 +88,5 @@ function once(title, f) {
 
   var time = finish - start;
 
-  console.log(
-    `[js] ${title} completed in an average of ${time.toPrecision(3)}ms`
-  );
+  console.log(`[js] ${title} completed in ${time.toPrecision(3)}ms`);
 }
