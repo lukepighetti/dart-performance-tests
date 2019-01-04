@@ -25,6 +25,17 @@ function main() {
       e.firstChild.remove();
     }
   });
+
+  /// Query the dom
+  iterate("query dom", i => {
+    document.querySelector("#output");
+  });
+
+  /// Query the dom, set text content
+  iterate("query dom, set text content", i => {
+    var element = document.querySelector("#output");
+    element.textContent = i.toString();
+  });
 }
 
 /**
