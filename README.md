@@ -1,10 +1,10 @@
-This repo tests the performance of Dart in the browser with vanilla JavaScript as a control.
+This repo tests the performance of Dart in the browser with vanilla JavaScript as a control. Results are printed to browser console.
 
 ## Dart
 
 ```
 pub get
-pub activate webdev
+pub global activate webdev
 webdev serve --release
 ```
 
