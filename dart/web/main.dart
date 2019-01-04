@@ -4,12 +4,12 @@ void main() {
   final e = querySelector('#output');
 
   /// Set CSS color
-  iterate("set CSS color - e..style.color – red/green", (int i) {
+  iterate("red/green CSS color", (int i) {
     e..style.color = i % 2 == 0 ? "red" : "green";
   });
 
   /// Set text content
-  iterate("setText - red/green", (int i) {
+  iterate("red/green text content", (int i) {
     e..text = i % 2 == 0 ? "red" : "green";
   });
 

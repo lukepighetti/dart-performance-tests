@@ -4,12 +4,12 @@ function main() {
   var e = document.querySelector("#output");
 
   /// Set CSS color
-  iterate("set CSS color - e.style.color – red/green", i => {
+  iterate("red/green CSS color", i => {
     e.style.color = i % 2 == 0 ? "red" : "green";
   });
 
   /// Set text content
-  iterate("setText - red/green", i => {
+  iterate("red/green text content", i => {
     e.textContent = i % 2 == 0 ? "red" : "green";
   });
 
