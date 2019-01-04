@@ -6,8 +6,14 @@ function main() {
   /// `Setting a single CSS color`
 
   /// Test the expense of setting the style.color property of an element
-  iterate("set CSS color - e..style.color – no change", i => {
-    e.style.color = "red";
+  iterate("set CSS color - e.style.color – red/green", i => {
+    e.style.color = i % 2 == 0 ? "red" : "green";
+  });
+
+  /// Test the expense of setting the text property of an element
+  /// while making sure that its a new value every time
+  iterate("setText - red/green", i => {
+    e.textContent = i % 2 == 0 ? "red" : "green";
   });
 }
 
