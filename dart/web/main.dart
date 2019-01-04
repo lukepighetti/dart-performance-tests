@@ -6,7 +6,6 @@ void main() {
   /// `Setting a single CSS color`
 
   /// Test the expense of setting the style.color property
-  /// while making sure that its a new value every time
   iterate("set CSS color - e..style.color – red/green", (int i) {
     e..style.color = i % 2 == 0 ? "red" : "green";
   });
@@ -22,12 +21,11 @@ void main() {
 ///
 ///
 ///
+///
 
 iterate(String title, Function(int) f) {
   const iterations = 400000;
-
   final s = Stopwatch();
-
   s.start();
 
   /// do an iteration
