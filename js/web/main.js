@@ -37,5 +37,7 @@ function iterate(title, f) {
 
   var time = finish - start;
 
-  console.log(`${title} completed in an average of ${time}ms`);
+  console.log(
+    `[js] ${title} completed in an average of ${time.toPrecision(3)}ms`
+  );
 }

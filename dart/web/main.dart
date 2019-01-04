@@ -37,5 +37,7 @@ iterate(String title, Function(int) f) {
 
   final time = (s.elapsedMicroseconds / 1000);
 
-  print("$title completed in ${time}ms");
+  print(
+    "[dart] $title completed in ${time.toStringAsPrecision(3)}ms",
+  );
 }
