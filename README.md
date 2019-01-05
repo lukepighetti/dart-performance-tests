@@ -6,7 +6,7 @@ This repo tests the performance of Dart in the browser with vanilla JavaScript a
 
 **IS** to make it easy to test the speed of different DOM operations with Dart for the purpose of designing Dart web frameworks.
 
-**IS NOT** to prove that one language is faster than another.
+**IS NOT** to prove that one language is faster than another. At least, not primarily. 😬
 
 ## Dart
 
