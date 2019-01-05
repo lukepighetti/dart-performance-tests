@@ -40,7 +40,7 @@ function main() {
   /// Create a nested tree
   once("create nested tree", i => {
     var a = document.createElement("div");
-    a.id = "#target";
+    a.id = "target";
 
     var b = document.createElement("div");
 
@@ -53,6 +53,22 @@ function main() {
 
     e.appendChild(a);
   });
+
+  /// Nested tests
+
+  {
+    var element = document.querySelector("#target");
+
+    /// Set color at leaf
+    iterate("red/green color at leaf of tree", i => {
+      element.style.color = i % 2 == 0 ? "red" : "green";
+    });
+
+    /// Set text at leaf
+    iterate("red/green text at leaf of tree", i => {
+      element.textContent = i % 2 == 0 ? "red" : "green";
+    });
+  }
 }
 
 /**
